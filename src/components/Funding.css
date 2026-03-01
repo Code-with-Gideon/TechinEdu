@@ -1,0 +1,78 @@
+.funding {
+  background: var(--edvora-white);
+}
+
+.funding-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 28px;
+}
+
+.funding-card {
+  background: var(--edvora-white);
+  padding: 28px 32px;
+  border-radius: var(--radius);
+  border: 1px solid var(--edvora-border);
+  transition: border-color 0.2s;
+}
+
+.funding-card:hover {
+  border-color: var(--edvora-primary);
+}
+
+.funding-num {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--edvora-primary);
+  opacity: 0.9;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.funding-title {
+  font-size: 1.25rem;
+  color: var(--edvora-ink);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.funding-concept {
+  font-size: 0.9375rem;
+  color: var(--edvora-slate);
+  margin-bottom: 16px;
+  line-height: 1.55;
+}
+
+.funding-examples {
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+.funding-examples li {
+  font-size: 0.875rem;
+  color: var(--edvora-ink);
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 6px;
+}
+
+.funding-examples li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--edvora-primary);
+  font-weight: 700;
+}
+
+.funding-why {
+  font-size: 0.875rem;
+  color: var(--edvora-slate);
+  padding-top: 16px;
+  border-top: 1px solid var(--edvora-border);
+  margin: 0;
+}
+
+.funding-why strong {
+  color: var(--edvora-primary);
+}

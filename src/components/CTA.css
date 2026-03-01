@@ -1,0 +1,62 @@
+.cta {
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.cta-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--edvora-primary);
+  z-index: 0;
+}
+
+.cta-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: var(--edvora-white);
+  margin-bottom: 16px;
+}
+
+.cta-text {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 36px;
+  line-height: 1.65;
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.cta .btn-primary {
+  background: var(--edvora-white);
+  color: var(--edvora-primary);
+}
+
+.cta .btn-primary:hover {
+  background: var(--edvora-dawn);
+  color: var(--edvora-primary-dark);
+}
+
+.cta .btn-light {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--edvora-white);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.cta .btn-light:hover {
+  background: var(--edvora-white);
+  color: var(--edvora-primary);
+  border-color: var(--edvora-white);
+}

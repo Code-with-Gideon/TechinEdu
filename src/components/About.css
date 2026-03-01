@@ -1,0 +1,90 @@
+.about {
+  background: var(--edvora-white);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.about-lead {
+  font-size: 1.25rem;
+  color: var(--edvora-ink);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.about-lead strong {
+  color: var(--edvora-primary);
+}
+
+.about-text {
+  color: var(--edvora-slate);
+  margin-bottom: 16px;
+  max-width: 540px;
+}
+
+.about-text strong {
+  color: var(--edvora-ink);
+}
+
+.about-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-card {
+  background: var(--edvora-white);
+  padding: 28px 32px;
+  border-radius: var(--radius);
+  border: 1px solid var(--edvora-border);
+  border-left: 3px solid var(--edvora-primary);
+  transition: border-color 0.2s;
+}
+
+.about-card:hover {
+  border-color: var(--edvora-primary);
+}
+
+.about-card-num {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--edvora-primary);
+  opacity: 0.8;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.about-card h3 {
+  font-size: 1.25rem;
+  color: var(--edvora-ink);
+  margin-bottom: 6px;
+}
+
+.about-card p {
+  font-size: 0.9375rem;
+  color: var(--edvora-slate);
+  margin: 0;
+}
+
+.about-card-2 {
+  border-left-color: var(--edvora-primary-light);
+}
+
+.about-card-3 {
+  border-left-color: var(--edvora-primary-dark);
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-visual {
+    order: -1;
+  }
+}

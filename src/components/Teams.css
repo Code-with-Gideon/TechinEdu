@@ -1,0 +1,130 @@
+.teams {
+  background: var(--edvora-dawn);
+}
+
+.teams-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.teams-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: sticky;
+  top: 100px;
+}
+
+.teams-nav-btn {
+  text-align: left;
+  padding: 14px 18px;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--edvora-slate);
+  background: var(--edvora-white);
+  border: 1px solid var(--edvora-border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.teams-nav-btn:hover {
+  color: var(--edvora-primary);
+  border-color: var(--edvora-primary);
+}
+
+.teams-nav-btn.active {
+  color: var(--edvora-primary);
+  background: rgba(37, 87, 124, 0.08);
+  border-color: var(--edvora-primary);
+}
+
+.teams-panel {
+  background: var(--edvora-white);
+  padding: 40px 44px;
+  border-radius: var(--radius);
+  border: 1px solid var(--edvora-border);
+  min-height: 360px;
+}
+
+.team-lead {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--edvora-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
+.team-purpose {
+  font-size: 1.25rem;
+  color: var(--edvora-ink);
+  margin-bottom: 24px;
+  line-height: 1.45;
+}
+
+.team-does-title {
+  font-size: 1rem;
+  color: var(--edvora-ink);
+  margin-bottom: 12px;
+}
+
+.team-does {
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+.team-does li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  color: var(--edvora-slate);
+  font-size: 0.9375rem;
+}
+
+.team-does li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--edvora-primary);
+}
+
+.team-essence {
+  font-size: 1rem;
+  color: var(--edvora-primary-dark);
+  border-left: 4px solid var(--edvora-primary);
+  padding: 16px 20px;
+  background: var(--edvora-dawn);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin: 0;
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .teams-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .teams-nav {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .teams-nav-btn {
+    flex: 1 1 auto;
+    min-width: 140px;
+  }
+
+  .teams-panel {
+    padding: 28px 24px;
+  }
+}
