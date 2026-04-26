@@ -1,47 +1,50 @@
 import './Funding.css'
+import fundingImageMain from '../images/IMG_0241.jpg'
+import fundingImageAlt from '../images/IMG_9842.jpg'
+import fundingImageThird from '../images/IMG_9952.jpg'
 
 const PATHWAYS = [
   {
     title: 'Community-Backed Funding',
-    concept: 'Position Edvora as community-supported infrastructure for youth development.',
-    examples: ['Edvora Circle — membership with early access & impact updates', 'Micro-Contribution Drives for specific outcomes'],
-    why: 'Small, recurring contributions create predictable cash flow and emotional investment.',
+    concept: 'Build consistent monthly support from individuals who believe in long-term youth outcomes.',
+    examples: ['TechinEdu Circle member contributions', 'Micro-campaigns tied to specific student goals'],
+    why: 'Recurring gifts give us predictable runway and execution confidence.',
   },
   {
-    title: 'CSR-as-a-Service',
-    concept: 'Edvora becomes a CSR implementation partner for companies.',
-    examples: ['Program design, implementation, impact reporting', 'Annual retainers, per-program funding, multi-year contracts'],
-    why: 'Companies want credible execution and measurable impact.',
+    title: 'Corporate Partnerships',
+    concept: 'Collaborate with companies looking for trusted education impact implementation.',
+    examples: ['Co-designed youth programs', 'Impact reporting and partner visibility'],
+    why: 'Partner capital and expertise accelerate scale and credibility.',
   },
   {
-    title: 'Partner Organization System',
-    concept: 'Partner-tier system where organizations pay to collaborate or co-brand.',
-    examples: ['Education, Technology, Corporate & NGO Partners', 'Co-created programs, brand alignment, partnership fees'],
-    why: 'Long-term strategic relationships and in-kind support.',
+    title: 'Partner Network Model',
+    concept: 'Structure partnerships with NGOs, schools, and institutions around shared outcomes.',
+    examples: ['Co-branded programs and events', 'Operational and in-kind support agreements'],
+    why: 'Cross-sector collaboration extends reach with lower delivery cost.',
   },
   {
-    title: 'Fee-for-Value Services',
-    concept: 'Mission-aligned revenue without excluding beneficiaries.',
-    examples: ['Paid workshops (proceeds subsidize free programs)', 'Curriculum licensing, facilitation, program design consulting'],
-    why: 'Earned income while protecting the nonprofit mission.',
+    title: 'Mission-Aligned Services',
+    concept: 'Offer premium workshops and advisory services that fund access for underserved learners.',
+    examples: ['Paid capability workshops', 'Curriculum design and facilitation support'],
+    why: 'Earned revenue helps sustain free and subsidized community programs.',
   },
   {
-    title: 'Digital Products & Learning Assets',
-    concept: 'Monetize intellectual and creative outputs in accessible ways.',
-    examples: ['Digital toolkits, guides, cohort-based learning', 'Pay-what-you-can and institutional licensing'],
-    why: 'Scalable revenue from Edvora\'s core outputs.',
+    title: 'Digital Learning Assets',
+    concept: 'Package learning tools and resources into scalable products for schools and communities.',
+    examples: ['Toolkits and learning guides', 'Institutional access and cohort resources'],
+    why: 'Digital products increase impact without linear operational costs.',
   },
   {
-    title: 'Events & Community Experiences',
-    concept: 'Turn the community into a value-generating ecosystem.',
-    examples: ['Ticketed summits, sponsored events', 'Demo days, annual impact event'],
-    why: 'Visibility, revenue, and stronger stakeholder relationships.',
+    title: 'Community Events',
+    concept: 'Host high-value learning and impact events that bring partners and young leaders together.',
+    examples: ['Sponsored showcases', 'Annual impact and demo events'],
+    why: 'Events build visibility, trust, and fundraising momentum.',
   },
   {
-    title: 'Hybrid Grant Strategy',
-    concept: 'Grants as part of the mix — but not the backbone.',
-    examples: ['Multi-year, unrestricted or flexible grants', 'Use grants to strengthen systems, not just run activities'],
-    why: 'Stability without dependence; align with long-term strategy.',
+    title: 'Strategic Grant Layer',
+    concept: 'Use grants selectively for systems, capacity building, and innovation pilots.',
+    examples: ['Flexible multi-year grants', 'Infrastructure and team capability support'],
+    why: 'Grants strengthen resilience without becoming the sole engine.',
   },
 ]
 
@@ -49,10 +52,30 @@ export default function Funding() {
   return (
     <section id="funding" className="section funding">
       <div className="container">
-        <h2 className="section-title">Sustainable Funding Pathways</h2>
+        <p className="section-eyebrow">Funding and support</p>
+        <h2 className="section-title">Back a model that converts support into lasting youth outcomes</h2>
         <p className="section-subtitle">
-          Edvora is building diverse revenue streams so we can focus on impact, not survival.
+          We combine philanthropy, partnerships, and earned revenue so TechinEdu can deliver consistent impact year-round.
         </p>
+        <div className="funding-top-cards">
+          <article>
+            <h3>Transparent impact</h3>
+            <p>Partners receive clear progress updates tied to learner outcomes and delivery milestones.</p>
+          </article>
+          <article>
+            <h3>Scalable system</h3>
+            <p>Support helps us strengthen governance, operations, and repeatable program quality.</p>
+          </article>
+          <article>
+            <h3>Future-ready learners</h3>
+            <p>Every contribution fuels mentorship, digital capability, and confidence in young people.</p>
+          </article>
+        </div>
+        <div className="funding-showcase">
+          <img src={fundingImageMain} alt="Mentor supporting learners in a computer class" className="funding-image" />
+          <img src={fundingImageAlt} alt="Hands-on digital learning session supported by partners" className="funding-image" />
+          <img src={fundingImageThird} alt="Learners receiving guided support during a workshop" className="funding-image" />
+        </div>
         <div className="funding-grid">
           {PATHWAYS.map((p, i) => (
             <article key={p.title} className="funding-card">

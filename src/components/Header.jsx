@@ -3,10 +3,8 @@ import './Header.css'
 
 const NAV_LINKS = [
   { label: 'Who We Are', href: '#about' },
-  { label: 'Our Philosophy', href: '#philosophy' },
-  { label: 'Our Teams', href: '#teams' },
   { label: 'Funding & Support', href: '#funding' },
-  { label: 'Get Involved', href: '#cta' },
+  { label: 'Get Involved', href: '#get-involved' },
 ]
 
 export default function Header() {
@@ -15,8 +13,8 @@ export default function Header() {
   return (
     <header className={`header ${open ? 'menu-open' : ''}`}>
       <div className="container header-inner">
-        <a href="#" className="logo-link" aria-label="Edvora home">
-          <img src="/logo.png" alt="Edvora" className="logo-img" />
+        <a href="#" className="logo-link" aria-label="TechinEdu home">
+          <img src="/logo.png" alt="TechinEdu" className="logo-img" />
         </a>
         <nav className={`nav ${open ? 'nav-open' : ''}`}>
           <ul className="nav-list">
@@ -29,6 +27,9 @@ export default function Header() {
             ))}
           </ul>
         </nav>
+        <a href="#get-involved" className="header-cta">
+          Volunteer
+        </a>
         <button
           type="button"
           className="menu-toggle"
