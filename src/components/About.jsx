@@ -36,13 +36,13 @@ export default function About() {
           </div>
           <div className="about-visual">
             <img
-              src={aboutImageMain}
+              src="https://res.cloudinary.com/dwhatdphm/image/upload/f_auto,q_auto/IMG_9929-Cd2FmPcX_zagqah"
               alt="Students participating in a TechinEdu learning activity"
               className="about-image about-image-main"
             />
             <div className="about-image-row">
               <img
-                src={aboutImageSecondary}
+                src="https://res.cloudinary.com/dwhatdphm/image/upload/f_auto,q_auto/IMG_0191-Bep-6JJK_whey6c"
                 alt="Learners collaborating during a guided session"
                 className="about-image about-image-secondary"
               />

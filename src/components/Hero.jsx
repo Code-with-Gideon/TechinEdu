@@ -1,5 +1,5 @@
 import './Hero.css'
-import heroImage from '../images/IMG_0216.jpg'
+// import heroImage from '../images/IMG_0216.jpg'
 
 const HIGHLIGHTS = [
   { title: 'No Learning Gaps', text: 'Targeted support for learners who need structure and consistent guidance.' },
@@ -32,7 +32,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="hero-visual">
-          <img src={heroImage} alt="Students collaborating during a TechinEdu session" className="hero-image" />
+          <img src="https://res.cloudinary.com/dwhatdphm/image/upload/f_auto,q_auto/IMG_0216-CgfvW8G3_uivlue" alt="Students collaborating during a TechinEdu session" className="hero-image" />
           <div className="hero-stat hero-stat-1">
             <span className="hero-stat-value">5,000+ Learners Reached</span>
             <span className="hero-stat-text">Across mentorship, education, and digital growth programs</span>

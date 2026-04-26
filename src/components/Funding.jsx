@@ -72,9 +72,9 @@ export default function Funding() {
           </article>
         </div>
         <div className="funding-showcase">
-          <img src={fundingImageMain} alt="Mentor supporting learners in a computer class" className="funding-image" />
-          <img src={fundingImageAlt} alt="Hands-on digital learning session supported by partners" className="funding-image" />
-          <img src={fundingImageThird} alt="Learners receiving guided support during a workshop" className="funding-image" />
+          <img src="https://res.cloudinary.com/dwhatdphm/image/upload/f_auto,q_auto/IMG_0241-DgYHnP0T_gs8lja" alt="Mentor supporting learners in a computer class" className="funding-image" />
+          <img src="https://res.cloudinary.com/dwhatdphm/image/upload/f_auto,q_auto/IMG_9842-BMJ-r-P4_gxquys" alt="Hands-on digital learning session supported by partners" className="funding-image" />
+          <img src="https://res.cloudinary.com/dwhatdphm/image/upload/f_auto,q_auto/IMG_9952-DZW--_Od_ad7suv" alt="Learners receiving guided support during a workshop" className="funding-image" />
         </div>
         <div className="funding-grid">
           {PATHWAYS.map((p, i) => (

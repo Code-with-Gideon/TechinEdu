@@ -20,7 +20,7 @@ export default function CTA() {
               Whether you mentor, teach, create, organize, or open doors, your contribution can
               directly expand access and quality for young learners.
             </p>
-            <img src={involvedImage} alt="Volunteer interacting with learners at TechinEdu" className="cta-image" />
+            <img src="https://res.cloudinary.com/dwhatdphm/image/upload/f_auto,q_auto/IMG_9998-DUrVnVoU_npux0x" alt="Volunteer interacting with learners at TechinEdu" className="cta-image" />
           </div>
           <form className="volunteer-form" onSubmit={handleSubmit}>
             <label htmlFor="name">Full name</label>
