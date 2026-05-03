@@ -17,6 +17,139 @@
   --radius-lg: 22px;
   --shadow-soft: 0 12px 34px rgba(23, 29, 57, 0.1);
   --shadow-strong: 0 20px 52px rgba(20, 24, 38, 0.2);
+  /* Full-bleed photo sections */
+  --photo-overlay-strong: linear-gradient(
+    180deg,
+    rgba(17, 46, 66, 0.78) 0%,
+    rgba(29, 71, 100, 0.92) 55%,
+    rgba(17, 46, 66, 0.88) 100%
+  );
+  --photo-overlay-soft: linear-gradient(
+    180deg,
+    rgba(17, 46, 66, 0.55) 0%,
+    rgba(29, 71, 100, 0.75) 100%
+  );
+  --photo-overlay-medium: linear-gradient(
+    135deg,
+    rgba(17, 46, 66, 0.65) 0%,
+    rgba(37, 87, 124, 0.72) 50%,
+    rgba(17, 46, 66, 0.8) 100%
+  );
+}
+
+/* Full-bleed photo background stack */
+.page-surface {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-bg-blur-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.page-bg-blur-layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.08);
+  filter: blur(11px);
+}
+
+.page-bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.page-bg-overlay--strong {
+  background: var(--photo-overlay-strong);
+}
+
+.page-bg-overlay--soft {
+  background: var(--photo-overlay-soft);
+}
+
+.page-bg-overlay--medium {
+  background: var(--photo-overlay-medium);
+}
+
+.page-bg-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.page-bg-pattern--diagonal {
+  background-image:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(30deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.page-bg-pattern--dots {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.page-bg-pattern--grid-light {
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.page-surface > .container {
+  position: relative;
+  z-index: 3;
+}
+
+.on-photo .section-title,
+.on-photo .page-title,
+.on-photo h1,
+.on-photo h2 {
+  color: var(--edvora-white);
+}
+
+.on-photo .section-subtitle,
+.on-photo .hero-lead,
+.on-photo .about-lead,
+.on-photo .about-text,
+.on-photo .volunteer-intro p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.on-photo .section-eyebrow,
+.on-photo .hero-badge {
+  color: rgba(255, 255, 255, 0.95);
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.on-photo .hero-title-accent {
+  color: #c8e4f5;
+}
+
+.on-photo a:not(.btn) {
+  color: #b8dff5;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.on-photo .btn-outline {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--edvora-white);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.on-photo .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.28);
+  color: var(--edvora-white);
+  border-color: rgba(255, 255, 255, 0.65);
 }
 
 *,
@@ -148,6 +281,42 @@ img {
   background: rgba(255, 255, 255, 0.26);
   color: var(--edvora-white);
   transform: translateY(-2px);
+}
+
+.bg-pattern-grid {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-pattern-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(37, 87, 124, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(37, 87, 124, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.bg-pattern-circles {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-pattern-circles::after {
+  content: '';
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  right: -120px;
+  top: -120px;
+  border-radius: 50%;
+  border: 2px solid rgba(37, 87, 124, 0.14);
+  box-shadow:
+    0 0 0 36px rgba(37, 87, 124, 0.08),
+    0 0 0 72px rgba(37, 87, 124, 0.05);
+  pointer-events: none;
 }
 
 @media (max-width: 900px) {
