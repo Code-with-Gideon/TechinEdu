@@ -16,7 +16,7 @@ export default function HomePage() {
         <div className="page-bg-overlay page-bg-overlay--strong involve-hero-overlay" aria-hidden="true" />
         <div className="page-bg-pattern page-bg-pattern--grid-light page-photo-hero-pattern involve-hero-pattern" aria-hidden="true" />
         <div className="container page-photo-hero-inner">
-          <p className="section-eyebrow">Get Involve</p>
+          <p className="section-eyebrow">Get Involved</p>
           <h2 className="page-title">Pick how you want to move the mission forward</h2>
           <p className="section-subtitle">
             Support TechinEdu through funding pathways or join as a volunteer. Both paths directly

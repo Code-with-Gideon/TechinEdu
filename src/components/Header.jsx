@@ -22,7 +22,7 @@ export default function Header() {
             </li>
             <li className={`nav-dropdown ${showInvolve ? 'open' : ''}`}>
               <button type="button" className="nav-link nav-link-btn" onClick={() => setShowInvolve((v) => !v)}>
-                Get Involve
+                Get Involved
               </button>
               <ul className="dropdown-menu">
                 <li>

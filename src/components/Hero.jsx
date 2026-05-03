@@ -35,7 +35,7 @@ export default function Hero() {
             </div>
             <div className="hero-stats-strip">
               <div className="hero-stat">
-                <span className="hero-stat-value">5,000+ Learners Reached</span>
+                <span className="hero-stat-value">5,300+ Learners Reached</span>
                 <span className="hero-stat-text">Across mentorship, education, and digital growth programs</span>
               </div>
               <div className="hero-stat">

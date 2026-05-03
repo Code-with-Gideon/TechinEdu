@@ -1,6 +1,6 @@
-# Edvora — Igniting the Future of Learning
+# TechinEdu — Igniting the Future of Learning
 
-A React-based website for **Edvora**, a youth-led non-profit reimagining education through holistic development, mentorship, and technology.
+A React-based website for **TechinEdu**, a youth-led non-profit reimagining education through holistic development, mentorship, and technology.
 
 ## Tech stack
 
@@ -25,7 +25,7 @@ npm run preview
 
 ## Logo & images
 
-- The logo is in `public/logo.png` (copied from your `TECHINEDU LOGO.png`). Replace with your final Edvora logo when ready.
+- The logo is in `public/logo.png` (copied from your `TECHINEDU LOGO.png`). Replace with your final TechinEdu logo when ready.
 - Other imagery can be added and replaced in the components (Hero, About, etc.) as needed.
 
 ## Brand
