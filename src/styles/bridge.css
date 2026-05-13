@@ -986,15 +986,45 @@ h3 { font-size: clamp(1.35rem, 2.2vw, 1.8rem); letter-spacing: -0.015em; }
     font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
   }
   .nav.is-open {
-    display: flex; flex-direction: column; gap: 4px;
-    position: fixed; inset: 0; padding: 100px 28px 28px;
-    background: var(--paper); z-index: 49;
+    display: flex; flex-direction: column; gap: 6px;
+    align-items: stretch;
+    position: fixed;
+    inset: 0;
+    padding: calc(88px + env(safe-area-inset-top, 0px)) 24px max(24px, env(safe-area-inset-bottom, 0px));
+    background: var(--paper);
+    z-index: 51;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
-  .nav.is-open a, .nav.is-open button { width: 100%; padding: 18px; font-size: 1.2rem; text-align: left; }
+  .nav.is-open a, .nav.is-open button {
+    width: 100%;
+    padding: 16px 18px;
+    font-size: 1.1rem;
+    text-align: left;
+    border-radius: 14px;
+  }
+  .nav.is-open .nav-dropdown { width: 100%; }
+  .nav.is-open .nav-dropdown-menu {
+    position: static;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    box-shadow: none;
+    border: 0;
+    padding: 4px 0 8px 8px;
+    margin: 0;
+    min-width: 0;
+    background: transparent;
+  }
+  .nav.is-open .nav-dropdown-menu a {
+    padding: 14px 16px;
+    font-size: 1.05rem;
+    border-radius: 12px;
+  }
   .hero-row { grid-template-columns: 1fr; }
   .hero-meta { max-width: none; }
   .hero-strip-inner { grid-template-columns: 1fr 1fr; gap: 18px; }
-  .about-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
   .pillars { grid-template-columns: repeat(2, 1fr); }
   .prog-card.feat { grid-template-columns: 1fr; }
   .prog-card.feat .prog-photo { aspect-ratio: 16/10; height: auto; }
@@ -1004,11 +1034,69 @@ h3 { font-size: clamp(1.35rem, 2.2vw, 1.8rem); letter-spacing: -0.015em; }
   .bigcta-inner, .phero-inner, .bridge, .sec-head { grid-template-columns: 1fr; gap: 24px; }
   .footer-cols { grid-template-columns: 1fr 1fr; }
   .hero .sticker { width: 110px; height: 110px; font-size: 0.85rem; }
+  .phero { padding: 120px 0 56px; }
+  .phero-inner { gap: 32px; }
 }
+
+@media (max-width: 900px) {
+  .prog-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .prog-card,
+  .prog-card.feat {
+    grid-column: 1 / -1;
+    min-height: 0;
+  }
+}
+
 @media (max-width: 620px) {
+  .wrap { padding-left: max(18px, env(safe-area-inset-left, 0px)); padding-right: max(18px, env(safe-area-inset-right, 0px)); }
+  .section { padding: clamp(44px, 10vw, 88px) 0; }
   .pillars { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
   .about-stats { grid-template-columns: 1fr; }
-  .hero-strip-inner { grid-template-columns: 1fr; }
+  .hero-strip-inner { grid-template-columns: 1fr; gap: 16px; }
   .footer-cols { grid-template-columns: 1fr; }
+  .footer-bot { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .phero { padding: 96px 0 40px; }
+  .phero h1 { font-size: clamp(2rem, 9vw, 3.2rem); }
+  .prog-body { padding: 18px 16px 22px; }
+  .hero-inner {
+    padding-top: calc(96px + env(safe-area-inset-top, 0px));
+    padding-bottom: 36px;
+  }
+  .hero-title {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    max-width: none;
+  }
+  .hero .sticker { display: none; }
+  .hero-scroll { display: none; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .bigcta {
+    padding-top: clamp(32px, 8vw, 72px);
+    padding-bottom: clamp(32px, 8vw, 72px);
+    padding-left: max(18px, env(safe-area-inset-left, 0px));
+    padding-right: max(18px, env(safe-area-inset-right, 0px));
+  }
+  .bigcta-actions { flex-direction: column; align-items: stretch; }
+  .bigcta-actions .btn { width: 100%; justify-content: center; }
+  .footer-mega { font-size: clamp(2.1rem, 11vw, 4rem); margin-bottom: 32px; }
+  .marquee { padding: 16px 0; }
+  .marquee-track > span {
+    font-size: clamp(1.05rem, 4.2vw, 1.55rem);
+    gap: 28px;
+  }
+  .sec-head { margin-bottom: 28px; gap: 16px; }
+  .about-grid { gap: 32px; }
+  .bridge-col { padding: 20px 16px; }
+  .bridge-col.is-photo { min-height: 200px; }
+  .site-footer { padding: 52px 0 24px; }
+}
+
+@media (max-width: 380px) {
+  .site-header .logo .name b {
+    font-size: 0.92rem;
+  }
 }

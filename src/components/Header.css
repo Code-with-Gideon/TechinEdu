@@ -1,26 +1,50 @@
-/* Logo mark: brand lockup on primary tile */
-.site-header .logo .logo-mark {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  background: var(--primary);
+/* Safe area + notched devices */
+.site-header {
+  padding-left: max(0px, env(safe-area-inset-left, 0px));
+  padding-right: max(0px, env(safe-area-inset-right, 0px));
+  padding-top: max(14px, env(safe-area-inset-top, 0px));
+}
+
+.site-header.scrolled {
+  padding-top: max(8px, env(safe-area-inset-top, 0px));
+  padding-bottom: 8px;
+  padding-left: max(0px, env(safe-area-inset-left, 0px));
+  padding-right: max(0px, env(safe-area-inset-right, 0px));
+}
+
+/* Logo + wordmark: flexible on narrow screens */
+.site-header .logo {
+  min-width: 0;
+  flex: 1;
+  align-items: center;
+}
+
+.site-header .logo .logo-img-wrap {
+  flex-shrink: 0;
   display: grid;
   place-items: center;
-  flex-shrink: 0;
-  position: relative;
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--primary);
   box-shadow: 0 0 0 1.5px color-mix(in oklab, var(--primary-2) 50%, transparent);
 }
 
-.site-header .logo:hover .logo-mark {
-  transform: rotate(-6deg) scale(1.04);
-}
-
-.site-header .logo .logo-mark img {
-  width: 28px;
-  height: 28px;
+.site-header .logo .logo-img-wrap img {
+  width: 26px;
+  height: 26px;
   object-fit: contain;
   display: block;
+}
+
+.site-header .logo .name {
+  min-width: 0;
+}
+
+@media (max-width: 400px) {
+  .site-header .logo .name small {
+    display: none;
+  }
 }
 
 /* Contact CTA: lagoon primary (brand) */
@@ -37,6 +61,27 @@
 .site-header .nav a.active {
   background: var(--primary);
   color: var(--paper);
+}
+
+.site-header .header-inner {
+  gap: 10px;
+}
+
+.site-header .burger {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 52;
+}
+
+@media (max-width: 560px) {
+  .site-header .header-inner > a.btn.btn-primary {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+  }
+
+  .site-header .header-inner > a.btn.btn-primary .arr {
+    display: none;
+  }
 }
 
 @media (max-width: 1020px) {

@@ -13,15 +13,24 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    if (navOpen) {
+      const prev = document.body.style.overflow
+      document.body.style.overflow = 'hidden'
+      return () => {
+        document.body.style.overflow = prev
+      }
+    }
+    return undefined
+  }, [navOpen])
+
   const closeNav = () => setNavOpen(false)
 
   return (
     <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
       <div className="wrap header-inner">
         <Link to="/" className="logo" aria-label="TechinEdu home" onClick={closeNav}>
-          {/* <span className="logo-mark bg-primary" aria-hidden="true">
-          </span> */}
-            <img src="/logo.png" alt="" width="auto" height={38} />
+            <img src="/logo.png" alt="" width="auto" height={36} decoding="async" />
           <span className="name">
             <b>TechinEdu</b>
             <small>The Bridge · Est. &rsquo;22</small>

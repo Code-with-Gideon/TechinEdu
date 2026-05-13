@@ -282,6 +282,15 @@
   .programs-teaser-grid {
     grid-template-columns: 1fr;
   }
+
+  .programs-teaser-card {
+    min-height: 168px;
+    padding: 16px 14px;
+  }
+
+  .programs-teaser-card h3 {
+    font-size: 1.05rem;
+  }
 }
 
 /* Brand: primary actions use lagoon blue (overrides bridge ink-only .btn-primary) */
