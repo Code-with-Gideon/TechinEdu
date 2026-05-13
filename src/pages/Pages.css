@@ -74,7 +74,7 @@
 }
 
 .phero-callout a {
-  color: var(--marigold);
+  color: color-mix(in oklab, var(--primary-2) 58%, white);
   text-decoration: underline;
   text-underline-offset: 3px;
 }

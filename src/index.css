@@ -3,7 +3,7 @@
   --edvora-primary: var(--primary-2);
   --edvora-primary-strong: var(--primary);
   --edvora-secondary: var(--primary-2);
-  --edvora-accent: var(--marigold);
+  --edvora-accent: var(--primary-2);
   --edvora-surface: var(--paper);
   --edvora-surface-strong: var(--paper-2);
   --edvora-ink: var(--ink);
@@ -319,9 +319,9 @@ main a:not(.btn):not(.pillar):not(.programs-teaser-card):hover {
   color: var(--primary);
 }
 
-/* Dark hero callouts: keep marigold links (override generic main link color) */
+/* Dark hero callouts: light brand blue links */
 main .phero-callout a {
-  color: var(--marigold);
+  color: color-mix(in oklab, var(--primary-2) 58%, white);
 }
 
 main .phero-callout a:hover {

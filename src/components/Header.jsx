@@ -19,9 +19,9 @@ export default function Header() {
     <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
       <div className="wrap header-inner">
         <Link to="/" className="logo" aria-label="TechinEdu home" onClick={closeNav}>
-          <span className="logo-mark" aria-hidden="true">
-            <img src="/logo.png" alt="" width={38} height={38} />
-          </span>
+          {/* <span className="logo-mark bg-primary" aria-hidden="true">
+          </span> */}
+            <img src="/logo.png" alt="" width="auto" height={38} />
           <span className="name">
             <b>TechinEdu</b>
             <small>The Bridge · Est. &rsquo;22</small>
