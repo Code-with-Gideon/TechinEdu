@@ -100,7 +100,7 @@ export default function FundingPage() {
           </div>
 
           <div className="inner-page-actions">
-            <a href="mailto:hello@techinedu.org" className="btn btn-marigold">
+            <a href="mailto:techinedu.co@gmail.com" className="btn btn-marigold">
               Contact us to fund <span className="arr">↗</span>
             </a>
             <Link to="/programs" className="btn btn-outline">

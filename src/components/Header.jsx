@@ -60,7 +60,7 @@ export default function Header() {
             Field Notes
           </a>
         </nav>
-        <a href="mailto:hello@techinedu.org" className="btn btn-primary">
+        <a href="mailto:hell@techinedu.org" className="btn btn-primary">
           Contact <span className="arr">↗</span>
         </a>
         <button

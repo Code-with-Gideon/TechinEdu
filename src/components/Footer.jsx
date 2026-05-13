@@ -45,7 +45,7 @@ export default function Footer() {
             <h4>Connect</h4>
             <ul>
               <li>
-                <a href="mailto:hello@techinedu.org">hello@techinedu.org</a>
+                <a href="mailto:techinedu.co@gmail.com">techinedu.co@gmail.com</a>
               </li>
               <li>
                 <a href="https://www.instagram.com/_techinedu_/" target="_blank" rel="noreferrer">
