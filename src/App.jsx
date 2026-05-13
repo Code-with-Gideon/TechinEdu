@@ -5,8 +5,11 @@ import HomePage from './pages/HomePage'
 import ProgramsPage from './pages/ProgramsPage'
 import FundingPage from './pages/FundingPage'
 import VolunteerPage from './pages/VolunteerPage'
+import { useRevealOnScroll } from './hooks/useRevealOnScroll'
 
 function App() {
+  useRevealOnScroll()
+
   return (
     <>
       <Header />

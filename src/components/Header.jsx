@@ -1,61 +1,67 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import './Header.css'
 
 export default function Header() {
-  const [open, setOpen] = useState(false)
-  const [showInvolve, setShowInvolve] = useState(false)
-  const [showQuickActions, setShowQuickActions] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const [navOpen, setNavOpen] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 30)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const closeNav = () => setNavOpen(false)
 
   return (
-    <header className={`header ${open ? 'menu-open' : ''}`}>
-      <div className="container header-inner">
-        <Link to="/" className="logo-link" aria-label="TechinEdu home" onClick={() => setOpen(false)}>
-          <img src="/logo.png" alt="TechinEdu" className="logo-img" />
+    <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
+      <div className="wrap header-inner">
+        <Link to="/" className="logo" aria-label="TechinEdu home" onClick={closeNav}>
+          <span className="logo-mark" aria-hidden="true">
+            <img src="/logo.png" alt="" width={38} height={38} />
+          </span>
+          <span className="name">
+            <b>TechinEdu</b>
+            <small>The Bridge · Est. &rsquo;22</small>
+          </span>
         </Link>
-        <nav className={`nav ${open ? 'nav-open' : ''}`}>
-          <ul className="nav-list">
-            <li>
-              <a href="/#about" className="nav-link" onClick={() => setOpen(false)}>
-                Who We Are
-              </a>
-            </li>
-            <li className={`nav-dropdown ${showInvolve ? 'open' : ''}`}>
-              <button type="button" className="nav-link nav-link-btn" onClick={() => setShowInvolve((v) => !v)}>
-                Get Involved
-              </button>
-              <ul className="dropdown-menu">
-                <li>
-                  <NavLink to="/funding" className="dropdown-link" onClick={() => setOpen(false)}>
-                    Funding and Support
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/volunteer" className="dropdown-link" onClick={() => setOpen(false)}>
-                    Volunteer
-                  </NavLink>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <NavLink to="/programs" className="nav-link" onClick={() => setOpen(false)}>
-                Programs
-              </NavLink>
-            </li>
-          </ul>
+        <nav className={`nav ${navOpen ? 'is-open' : ''}`}>
+          <a href="/#who" className="" onClick={closeNav}>
+            Who We Are
+          </a>
+          <div className="nav-dropdown">
+            <button type="button">
+              Get Involved <span style={{ fontSize: '0.7em', opacity: 0.6, marginLeft: 4 }}>▾</span>
+            </button>
+            <div className="nav-dropdown-menu">
+              <Link to="/funding" onClick={closeNav}>
+                Funding &amp; Support
+              </Link>
+              <Link to="/volunteer" onClick={closeNav}>
+                Volunteer
+              </Link>
+            </div>
+          </div>
+          <NavLink to="/programs" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeNav}>
+            Programs
+          </NavLink>
+          <a href="/#story" onClick={closeNav}>
+            Field Notes
+          </a>
         </nav>
-        <a href="mailto:hello@techinedu.org" className="header-cta">Contact us</a>
-        {/* Mobile menu toggle */}
+        <a href="mailto:hello@techinedu.org" className="btn btn-primary">
+          Contact <span className="arr">↗</span>
+        </a>
         <button
           type="button"
-          className="menu-toggle"
-          aria-expanded={open}
+          className="burger"
           aria-label="Toggle menu"
-          onClick={() => setOpen(!open)}
+          aria-expanded={navOpen}
+          onClick={() => setNavOpen((o) => !o)}
         >
-          <span />
-          <span />
-          <span />
+          {navOpen ? 'Close' : 'Menu'}
         </button>
       </div>
     </header>

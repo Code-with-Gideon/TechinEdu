@@ -1,75 +1,74 @@
-import './About.css'
-import '../pages/Pages.css'
-import aboutImageMain from '../images/IMG_9929.jpg'
-import aboutImageSecondary from '../images/IMG_0191.jpg'
+import AnimatedCount from './AnimatedCount'
 
 export default function About() {
   return (
-    <>
-      <section id="about" className="section page-photo-hero page-photo-hero--compact page-surface on-photo about-photo-hero">
-        <div className="page-bg-blur-layer" aria-hidden="true">
-          <img src={aboutImageMain} alt="" />
+    <section className="section" id="who">
+      <div className="wrap">
+        <div className="sec-head" data-reveal>
+          <h2>
+            Who we are — and why <span className="accent">&quot;the bridge&quot;</span> matters.
+          </h2>
+          <div className="side">
+            <span className="eyebrow">Who we are · 01</span>
+            <p>
+              TechinEdu is a youth-led nonprofit movement designing practical learning pathways for the world young
+              people are growing into — not the one we grew up with.
+            </p>
+          </div>
         </div>
-        <div className="page-bg-overlay page-bg-overlay--strong about-hero-overlay" aria-hidden="true" />
-        <div className="page-bg-pattern page-bg-pattern--grid-light page-photo-hero-pattern about-hero-pattern" aria-hidden="true" />
-        <div className="container page-photo-hero-inner">
-          <p className="section-eyebrow">Who we are</p>
-          <h2 className="page-title">We help young people move from potential to measurable progress</h2>
-          <p className="section-subtitle about-hero-lead">
-            TechinEdu is a <strong>youth-led nonprofit movement</strong> designing practical
-            learning pathways for the world young people are growing into.
-          </p>
-        </div>
-      </section>
-      <section className="section page-content-body about-body">
-        <div className="container">
-          <div className="about-grid">
-            <div className="about-content">
-              <p className="about-text">
-                Our work blends classroom support, mentorship, and digital learning to build the
-                full learner: confident, capable, and future-ready. We prioritize systems that
-                scale impact, not noise.
-              </p>
-              <div className="about-metrics">
-                <article>
-                  <h3>5,300+</h3>
-                  <p>Young learners supported</p>
-                </article>
-                <article>
-                  <h3>200+</h3>
-                  <p>Mentors and volunteers engaged</p>
-                </article>
-                <article>
-                  <h3>9</h3>
-                  <p>High-impact initiatives launched</p>
-                </article>
-              </div>
+
+        <div className="about-grid">
+          <div className="about-copy" data-reveal>
+            <p>
+              Most learners we work with don&apos;t lack ambition — they lack{' '}
+              <strong>access, structure, and someone who shows up consistently.</strong> So we close those three gaps at
+              once.
+            </p>
+            <p>
+              Our work blends classroom support, mentorship, and digital learning to build the full learner: confident,
+              capable, and future-ready. We prioritize systems that scale impact — not noise.
+            </p>
+
+            <div className="about-stats" data-reveal-stagger>
+              <article className="stat">
+                <span className="v">
+                  <AnimatedCount count={5300} suffix="+" />
+                </span>
+                <span className="l">Young learners supported</span>
+              </article>
+              <article className="stat">
+                <span className="v">
+                  <AnimatedCount count={200} suffix="+" />
+                </span>
+                <span className="l">Mentors &amp; volunteers engaged</span>
+              </article>
+              <article className="stat">
+                <span className="v">
+                  <AnimatedCount count={9} suffix="" />
+                </span>
+                <span className="l">High-impact initiatives launched</span>
+              </article>
             </div>
-            <div className="about-visual">
-              <img
-                src={aboutImageMain}
-                alt="Students participating in a TechinEdu learning activity"
-                className="about-image about-image-main"
-              />
-              <div className="about-image-row">
-                <img
-                  src={aboutImageSecondary}
-                  alt="Learners collaborating during a guided session"
-                  className="about-image about-image-secondary"
-                />
-                <div className="about-card">
-                  <h3>How we deliver</h3>
-                  <ul>
-                    <li>Project-based learning experiences</li>
-                    <li>Structured mentorship and guidance</li>
-                    <li>Digital skills for real opportunities</li>
-                  </ul>
-                </div>
-              </div>
+          </div>
+
+          <div className="about-mosaic" data-reveal>
+            <div className="ph" style={{ backgroundImage: "url('/update/assets/p02.jpg')" }}>
+              <span className="badge">★ The Bridge</span>
+            </div>
+            <div className="ph" style={{ backgroundImage: "url('/update/assets/p03.jpg')" }} />
+            <div className="ph">
+              <h3>How we deliver</h3>
+              <p>
+                01 · Project-based learning
+                <br />
+                02 · Structured mentorship
+                <br />
+                03 · Digital skills for real opportunities
+              </p>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   )
 }

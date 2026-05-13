@@ -1,43 +1,55 @@
-/* TechinEdu brand visual system */
+/* Legacy Edvora variable aliases + inner-page utilities (bridge.css loads first) */
 :root {
-  --edvora-primary: #25577c;
-  --edvora-primary-strong: #1d4764;
-  --edvora-secondary: #2f84b8;
-  --edvora-accent: #f2c546;
-  --edvora-surface: #f4f7fa;
-  --edvora-surface-strong: #e8eef4;
-  --edvora-ink: #131320;
-  --edvora-slate: #5d6378;
-  --edvora-border: #dfe4f1;
+  --edvora-primary: var(--primary-2);
+  --edvora-primary-strong: var(--primary);
+  --edvora-secondary: var(--primary-2);
+  --edvora-accent: var(--marigold);
+  --edvora-surface: var(--paper);
+  --edvora-surface-strong: var(--paper-2);
+  --edvora-ink: var(--ink);
+  --edvora-slate: var(--ink-soft);
+  --edvora-border: var(--paper-edge);
   --edvora-white: #ffffff;
-  --font-heading: 'Outfit', system-ui, sans-serif;
-  --font-body: 'DM Sans', system-ui, sans-serif;
-  --radius-sm: 10px;
-  --radius: 14px;
-  --radius-lg: 22px;
-  --shadow-soft: 0 12px 34px rgba(23, 29, 57, 0.1);
-  --shadow-strong: 0 20px 52px rgba(20, 24, 38, 0.2);
-  /* Full-bleed photo sections */
+  --font-heading: var(--f-display);
+  --font-body: var(--f-body);
+  --radius-sm: var(--r-sm);
+  --radius: var(--r);
+  --radius-lg: var(--r-lg);
+  --shadow-strong: 0 20px 52px rgba(20, 17, 13, 0.22);
   --photo-overlay-strong: linear-gradient(
     180deg,
-    rgba(17, 46, 66, 0.78) 0%,
-    rgba(29, 71, 100, 0.92) 55%,
-    rgba(17, 46, 66, 0.88) 100%
+    rgba(14, 58, 86, 0.78) 0%,
+    rgba(10, 38, 56, 0.92) 55%,
+    rgba(10, 26, 38, 0.88) 100%
   );
   --photo-overlay-soft: linear-gradient(
     180deg,
-    rgba(17, 46, 66, 0.55) 0%,
-    rgba(29, 71, 100, 0.75) 100%
+    rgba(14, 58, 86, 0.55) 0%,
+    rgba(10, 38, 56, 0.75) 100%
   );
   --photo-overlay-medium: linear-gradient(
     135deg,
-    rgba(17, 46, 66, 0.65) 0%,
+    rgba(14, 58, 86, 0.65) 0%,
     rgba(37, 87, 124, 0.72) 50%,
-    rgba(17, 46, 66, 0.8) 100%
+    rgba(10, 38, 56, 0.8) 100%
   );
 }
 
-/* Full-bleed photo background stack */
+/* Match prototype .wrap width for existing .container usage */
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+/* Full-bleed photo sections (Programs, Funding, Volunteer, etc.) */
 .page-surface {
   position: relative;
   overflow: hidden;
@@ -152,52 +164,9 @@
   border-color: rgba(255, 255, 255, 0.65);
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: var(--font-body);
-  color: var(--edvora-ink);
-  background: var(--edvora-surface);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-a {
-  color: var(--edvora-primary);
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.container {
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 28px;
-}
-
-.section {
-  padding: 96px 0;
+/* Inner pages: extra vertical rhythm (bridge .section differs from legacy) */
+.section.page-content-body {
+  padding: clamp(64px, 8vw, 96px) 0;
 }
 
 .section-title {
@@ -222,65 +191,16 @@ img {
   text-transform: uppercase;
   font-weight: 700;
   color: var(--edvora-primary-strong);
-  border: 1px solid #b8ccda;
+  border: 1px solid color-mix(in oklab, var(--edvora-primary-strong) 35%, transparent);
   border-radius: 999px;
   padding: 6px 12px;
   margin-bottom: 16px;
   background: rgba(255, 255, 255, 0.85);
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.92rem;
-  padding: 12px 22px;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s, background 0.2s, color 0.2s, border-color 0.2s;
-}
-
 .btn:focus-visible {
   outline: 2px solid var(--edvora-secondary);
   outline-offset: 2px;
-}
-
-.btn-primary {
-  background: var(--edvora-primary-strong);
-  color: var(--edvora-white);
-  box-shadow: var(--shadow-soft);
-}
-
-.btn-primary:hover {
-  background: var(--edvora-primary);
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  background: var(--edvora-white);
-  color: var(--edvora-ink);
-  border: 1px solid var(--edvora-border);
-}
-
-.btn-outline:hover {
-  border-color: #b0c5d4;
-  transform: translateY(-2px);
-}
-
-.btn-light {
-  background: rgba(255, 255, 255, 0.16);
-  color: var(--edvora-white);
-  border: 1px solid var(--edvora-border);
-}
-
-.btn-light:hover {
-  background: rgba(255, 255, 255, 0.26);
-  color: var(--edvora-white);
-  transform: translateY(-2px);
 }
 
 .bg-pattern-grid {
@@ -319,12 +239,91 @@ img {
   pointer-events: none;
 }
 
-@media (max-width: 900px) {
-  .container {
-    padding: 0 20px;
-  }
+/* Programs teaser grid (home) */
+.programs-teaser-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
 
-  .section {
-    padding: 72px 0;
+.programs-teaser-card {
+  grid-column: span 1;
+  min-height: 220px;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+}
+
+.pillar.programs-teaser-card:hover .programs-teaser-cta {
+  color: rgba(245, 239, 226, 0.78);
+}
+
+.programs-teaser-card h3 {
+  font-size: 1.15rem;
+}
+
+.programs-teaser-cta {
+  margin-top: auto;
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+
+@media (max-width: 1020px) {
+  .programs-teaser-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
+
+@media (max-width: 620px) {
+  .programs-teaser-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Brand: primary actions use lagoon blue (overrides bridge ink-only .btn-primary) */
+.btn-primary {
+  background: var(--primary);
+  color: var(--paper);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-primary:hover {
+  background: var(--primary-2);
+  color: var(--paper);
+  box-shadow: var(--shadow-pop);
+}
+
+/* Outline buttons: lagoon border + hover fill (single brand language) */
+.btn-outline {
+  border-color: color-mix(in oklab, var(--primary) 42%, var(--paper-edge));
+  color: var(--primary);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: var(--paper);
+  border-color: var(--primary);
+}
+
+/* In-page links on cream surfaces */
+main a:not(.btn):not(.pillar):not(.programs-teaser-card) {
+  color: var(--primary-2);
+}
+
+main a:not(.btn):not(.pillar):not(.programs-teaser-card):hover {
+  color: var(--primary);
+}
+
+/* Dark hero callouts: keep marigold links (override generic main link color) */
+main .phero-callout a {
+  color: var(--marigold);
+}
+
+main .phero-callout a:hover {
+  color: #fff;
 }
